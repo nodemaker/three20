@@ -1231,4 +1231,9 @@
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (UIActivityIndicatorViewStyle) tableRefreshHeaderActivityViewStyle {
+        return UIActivityIndicatorViewStyleGray;
+}
+
 @end

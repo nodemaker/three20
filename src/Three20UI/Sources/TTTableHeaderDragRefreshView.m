@@ -129,7 +129,8 @@
     [self addSubview:_arrowImage];
 
     _activityView = [[UIActivityIndicatorView alloc]
-                     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+                     initWithActivityIndicatorStyle:
+                                         TTSTYLEVAR(tableRefreshHeaderActivityViewStyle)];
     _activityView.frame = CGRectMake( 30.0f, frame.size.height - 38.0f, 20.0f, 20.0f );
     _activityView.hidesWhenStopped  = YES;
     [self addSubview:_activityView];
