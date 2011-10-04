@@ -41,6 +41,10 @@
 @property (nonatomic, readonly) UIColor*  searchTableBackgroundColor;
 @property (nonatomic, readonly) UIColor*  searchTableSeparatorColor;
 
+//Table Cells
+@property (nonatomic, readonly) UIColor*  tableCellSelectedBackgroundColor;
+@property (nonatomic, readonly) UIColor*  tableCellBackgroundColor;
+
 // Table Headers
 @property (nonatomic, readonly) UIColor*  tableHeaderTextColor;
 @property (nonatomic, readonly) UIColor*  tableHeaderShadowColor;
