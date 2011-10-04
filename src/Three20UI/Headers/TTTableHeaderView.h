@@ -21,6 +21,6 @@
   UILabel* _label;
 }
 
-- (id)initWithTitle:(NSString*)title;
+- (id)initWithTitle:(NSString*)title style:(UITableViewStyle)style;
 
 @end

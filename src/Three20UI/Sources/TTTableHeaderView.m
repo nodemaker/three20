@@ -34,27 +34,44 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (id)initWithTitle:(NSString*)title {
+- (id)initWithTitle:(NSString*)title style:(UITableViewStyle)style {
 	self = [super init];
-  if (self) {
-    self.backgroundColor = [UIColor clearColor];
-    self.style = TTSTYLE(tableHeader);
+    if (self) {
+        self.backgroundColor = [UIColor clearColor];
 
-    _label = [[UILabel alloc] init];
-    _label.text = title;
-    _label.backgroundColor = [UIColor clearColor];
-    _label.textColor = TTSTYLEVAR(tableHeaderTextColor)
-                       ? TTSTYLEVAR(tableHeaderTextColor)
-                       : TTSTYLEVAR(linkTextColor);
-    _label.shadowColor = TTSTYLEVAR(tableHeaderShadowColor)
-                         ? TTSTYLEVAR(tableHeaderShadowColor)
-                         : [UIColor clearColor];
-    _label.shadowOffset = TTSTYLEVAR(tableHeaderShadowOffset);
-    _label.font = TTSTYLEVAR(tableHeaderPlainFont);
-    [self addSubview:_label];
-  }
+        _label = [[UILabel alloc] init];
+        _label.text = title;
+        _label.backgroundColor = [UIColor clearColor];
 
-  return self;
+        if (style == UITableViewStylePlain) {
+
+            self.style = TTSTYLE(tableHeaderPlain);
+            _label.textColor = TTSTYLEVAR(tableHeaderPlainTextColor)
+            ? TTSTYLEVAR(tableHeaderPlainTextColor)
+            : TTSTYLEVAR(linkTextColor);
+            _label.shadowColor = TTSTYLEVAR(tableHeaderPlainShadowColor)
+            ? TTSTYLEVAR(tableHeaderPlainShadowColor)
+            : [UIColor clearColor];
+            _label.shadowOffset = TTSTYLEVAR(tableHeaderPlainShadowOffset);
+            _label.font = TTSTYLEVAR(tableHeaderPlainFont);
+
+        } else {
+
+            self.style = TTSTYLE(tableHeaderGrouped);
+            _label.textColor = TTSTYLEVAR(tableHeaderGroupedTextColor)
+            ? TTSTYLEVAR(tableHeaderGroupedTextColor)
+            : TTSTYLEVAR(linkTextColor);
+            _label.shadowColor = TTSTYLEVAR(tableHeaderGroupedShadowColor)
+            ? TTSTYLEVAR(tableHeaderGroupedShadowColor)
+            : [UIColor clearColor];
+            _label.shadowOffset = TTSTYLEVAR(tableHeaderGroupedShadowOffset);
+            _label.font = TTSTYLEVAR(tableHeaderGroupedFont);
+        }
+
+        [self addSubview:_label];
+    }
+
+    return self;
 }
 
 

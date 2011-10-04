@@ -42,10 +42,13 @@
 @property (nonatomic, readonly) UIColor*  searchTableSeparatorColor;
 
 // Table Headers
-@property (nonatomic, readonly) UIColor*  tableHeaderTextColor;
-@property (nonatomic, readonly) UIColor*  tableHeaderShadowColor;
-@property (nonatomic, readonly) CGSize    tableHeaderShadowOffset;
-@property (nonatomic, readonly) UIColor*  tableHeaderTintColor;
+@property (nonatomic, readonly) UIColor*  tableHeaderPlainTextColor;
+@property (nonatomic, readonly) UIColor*  tableHeaderPlainShadowColor;
+@property (nonatomic, readonly) CGSize    tableHeaderPlainShadowOffset;
+@property (nonatomic, readonly) UIColor*  tableHeaderPlainTintColor;
+@property (nonatomic, readonly) UIColor*  tableHeaderGroupedTextColor;
+@property (nonatomic, readonly) UIColor*  tableHeaderGroupedShadowColor;
+@property (nonatomic, readonly) CGSize    tableHeaderGroupedShadowOffset;
 
 // Photo Captions
 @property (nonatomic, readonly) UIColor*  photoCaptionTextColor;
