@@ -18,6 +18,7 @@
 
 // UI
 #import "Three20UI/TTTextEditor.h"
+#import "Three20UI/TTTableViewCellBackgroundView.h"
 
 // - Table Items
 #import "Three20UI/TTTableItem.h"
@@ -50,6 +51,9 @@
 
 // Style
 #import "Three20Style/TTStyledText.h"
+#import "Three20Style/TTGlobalStyle.h"
+#import "Three20Style/TTStyleSheet.h"
+#import "Three20Style/TTDefaultStyleSheet.h"
 
 // Core
 #import "Three20Core/TTCorePreprocessorMacros.h"
@@ -128,6 +132,46 @@
   if (cell == nil) {
     cell = [[[cellClass alloc] initWithStyle:UITableViewCellStyleDefault
                                reuseIdentifier:identifier] autorelease];
+
+
+    if ([cell isKindOfClass:[UITableViewCell class]]) {
+
+      if (TTSTYLEVAR(tableCellBackgroundColor)) {
+        UITableViewCell* tableCell = (UITableViewCell*)cell;
+        tableCell.backgroundColor = TTSTYLEVAR(tableCellBackgroundColor);
+      }
+
+      if (TTSTYLEVAR(tableCellSelectedBackgroundColor)) {
+
+        UITableViewCell* tableCell = (UITableViewCell*)cell;
+        TTTableViewCellBackgroundView* backgroundView =
+        [[[TTTableViewCellBackgroundView alloc] init] autorelease];
+        backgroundView.fillColor = TTSTYLEVAR(tableCellSelectedBackgroundColor);
+
+        NSInteger sectionRows = [tableView numberOfRowsInSection:[indexPath section]];
+        NSInteger row = [indexPath row];
+
+        if (tableView.style == UITableViewStyleGrouped) {
+          backgroundView.borderColor = TTSTYLEVAR(tableGroupedCellSeparatorColor);
+
+          if (row == 0 && row == sectionRows - 1)
+            backgroundView.position = TTTableViewCellPositionSingle;
+          else if (row == 0)
+            backgroundView.position = TTTableViewCellPositionTop;
+          else if (row == sectionRows - 1)
+            backgroundView.position = TTTableViewCellPositionBottom;
+          else
+            backgroundView.position = TTTableViewCellPositionMiddle;
+
+        } else {
+          backgroundView.borderColor = TTSTYLEVAR(tablePlainCellSeparatorColor);
+          backgroundView.position = TTTableViewCellPositionMiddle;
+        }
+
+        tableCell.selectedBackgroundView = backgroundView;
+      }
+    }
+
   }
   [identifier release];
 
