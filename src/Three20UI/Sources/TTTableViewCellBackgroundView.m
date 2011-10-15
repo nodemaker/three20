@@ -135,7 +135,10 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
+
     TT_RELEASE_SAFELY(_fillColor);
+    TT_RELEASE_SAFELY(_borderColor);
+
     [super dealloc];
 }
 
