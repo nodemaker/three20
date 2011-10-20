@@ -14,6 +14,8 @@
 // limitations under the License.
 //
 
+
+#import <Twitter/Twitter.h>
 #import "Three20UI/TTWebController.h"
 
 // UI
@@ -115,6 +117,13 @@
   [_webView goForward];
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)twitterAction {
+  TWTweetComposeViewController *twitter = [[[TWTweetComposeViewController alloc] init] autorelease];
+  [twitter setInitialText:[_webView stringByEvaluatingJavaScriptFromString:@"document.title"]];
+  [twitter addURL:self.URL];
+  [self presentViewController:twitter animated:YES completion:nil];
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)refreshAction {
@@ -218,15 +227,38 @@
   _toolbar.autoresizingMask =
   UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
   _toolbar.tintColor = TTSTYLEVAR(toolbarTintColor);
-  _toolbar.items = [NSArray arrayWithObjects:
-                    _backButton,
-                    space,
-                    _forwardButton,
-                    space,
-                    _refreshButton,
-                    space,
-                    _actionButton,
-                    nil];
+
+  if (TTOSVersionIsAtLeast(5.0)&&[TWTweetComposeViewController canSendTweet]) {
+    _twitterButton =
+    [[UIBarButtonItem alloc] initWithImage:
+     TTIMAGE(@"bundle://Three20.bundle/images/twitterIcon.png")
+                                     style:UIBarButtonItemStylePlain
+                                    target:self
+                                    action:@selector(twitterAction)];
+    _toolbar.items = [NSArray arrayWithObjects:
+                      _backButton,
+                      space,
+                      _forwardButton,
+                      space,
+                      _twitterButton,
+                      space,
+                      _refreshButton,
+                      space,
+                      _actionButton,
+                      nil];
+
+  } else {
+    _toolbar.items = [NSArray arrayWithObjects:
+                      _backButton,
+                      space,
+                      _forwardButton,
+                      space,
+                      _refreshButton,
+                      space,
+                      _actionButton,
+                      nil];
+  }
+
   [self.view addSubview:_toolbar];
 }
 
