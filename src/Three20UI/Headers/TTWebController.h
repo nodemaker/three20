@@ -33,6 +33,7 @@
   UIBarButtonItem*  _stopButton;
   UIBarButtonItem*  _actionButton;
   UIBarButtonItem*  _activityItem;
+  UIBarButtonItem*  _twitterButton;
 
   NSURL*            _loadingURL;
 
