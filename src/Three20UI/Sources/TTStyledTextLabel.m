@@ -39,6 +39,9 @@
 #import "Three20Core/TTCorePreprocessorMacros.h"
 #import "Three20Core/TTDebug.h"
 
+// UI Common
+#import "Three20UICommon/TTGlobalUICommon.h"
+
 static const CGFloat kCancelHighlightThreshold = 4.0f;
 
 
@@ -377,8 +380,13 @@ static const CGFloat kCancelHighlightThreshold = 4.0f;
     // Remove the highlighted node+frame when resizing the text
     self.highlightedNode = nil;
   }
-
   _text.width = newWidth;
+
+  //If orientation has changed then call setNeedsDisplay
+  if (_orientation!=TTDeviceOrientation()) {
+    _orientation = TTDeviceOrientation();
+    [self setNeedsDisplay];
+  }
 }
 
 
