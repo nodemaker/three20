@@ -58,6 +58,8 @@
 - (void)from:(NSString*)URL toViewController:(id)target selector:(SEL)selector;
 - (void)from:(NSString*)URL toViewController:(id)target transition:(NSInteger)transition;
 - (void)from:(NSString*)URL parent:(NSString*)parentURL
+        toViewController:(id)target;
+- (void)from:(NSString*)URL parent:(NSString*)parentURL
         toViewController:(id)target selector:(SEL)selector transition:(NSInteger)transition;
 
 /**
@@ -79,6 +81,8 @@
 - (void)from:(NSString*)URL toModalViewController:(id)target;
 - (void)from:(NSString*)URL toModalViewController:(id)target selector:(SEL)selector;
 - (void)from:(NSString*)URL toModalViewController:(id)target transition:(NSInteger)transition;
+- (void)from:(NSString*)URL parent:(NSString*)parentURL
+        toModalViewController:(id)target;
 - (void)from:(NSString*)URL parent:(NSString*)parentURL
         toModalViewController:(id)target selector:(SEL)selector transition:(NSInteger)transition;
 
