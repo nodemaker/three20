@@ -40,6 +40,7 @@
   TTStyledBoxFrame* _highlightedFrame;
 
   NSMutableArray*   _accessibilityElements;
+  UIDeviceOrientation _orientation;
 }
 
 /**
