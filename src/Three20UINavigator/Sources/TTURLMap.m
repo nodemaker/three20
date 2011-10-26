@@ -205,6 +205,16 @@
   [pattern release];
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)from:(NSString*)URL parent:(NSString*)parentURL
+        toViewController:(id)target {
+    TTURLNavigatorPattern* pattern = [[TTURLNavigatorPattern alloc] initWithTarget:target
+                                                                    mode:TTNavigationModeCreate];
+    pattern.parentURL = parentURL;
+    [self addObjectPattern:pattern forURL:URL];
+    [pattern release];
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)from:(NSString*)URL toViewController:(id)target selector:(SEL)selector {
@@ -288,6 +298,17 @@
   [self addObjectPattern:pattern forURL:URL];
   [pattern release];
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)from:(NSString*)URL parent:(NSString*)parentURL
+        toModalViewController:(id)target {
+    TTURLNavigatorPattern* pattern = [[TTURLNavigatorPattern alloc] initWithTarget:target
+                                                                    mode:TTNavigationModeModal];
+    pattern.parentURL = parentURL;
+    [self addObjectPattern:pattern forURL:URL];
+    [pattern release];
+}
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
