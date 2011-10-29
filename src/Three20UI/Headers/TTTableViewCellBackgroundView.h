@@ -2,7 +2,7 @@
 //  TTTableViewCellBackgroundView.h
 //  Three20UI
 //
-//  Created by samyzee on 10/4/11.
+//  Created by Sumeru Chatterjee on 10/4/11.
 //
 
 #import <UIKit/UIKit.h>
