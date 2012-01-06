@@ -13,6 +13,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28C286E10D94DF7D0034E888 /* CatalogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CatalogController.m */; };
+                2DF41D261450AD9600642E3A /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF41D251450AD9600642E3A /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		666E183012944D23001C1D97 /* SplitCatalogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666E182F12944D23001C1D97 /* SplitCatalogController.m */; };
 		6675F5F412945622008DE0A6 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 6675F5F012945622008DE0A6 /* Default-Landscape.png */; };
 		6675F5F512945622008DE0A6 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 6675F5F112945622008DE0A6 /* Default-Portrait.png */; };
@@ -222,6 +223,7 @@
 		28C286DF0D94DF7D0034E888 /* CatalogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* CatalogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+                2DF41D251450AD9600642E3A /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		665E998712662FFA0025FA42 /* TTCatalog-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TTCatalog-Info.plist"; sourceTree = "<group>"; };
 		666E182E12944D23001C1D97 /* SplitCatalogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitCatalogController.h; sourceTree = "<group>"; };
 		666E182F12944D23001C1D97 /* SplitCatalogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitCatalogController.m; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+                                2DF41D261450AD9600642E3A /* Twitter.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
@@ -356,6 +359,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+                                2DF41D251450AD9600642E3A /* Twitter.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				6E7F995E118E3A4800443B46 /* Configurations */,
