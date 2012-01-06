@@ -273,7 +273,13 @@ static const NSInteger kDefaultColumnCount = 3;
       CGRect frame = CGRectMake(x, y, buttonWidth, buttonHeight);
       if (!button.dragging) {
         button.transform = CGAffineTransformIdentity;
-        button.frame = button == _dragButton ? [_scrollView convertRect:frame toView:self] : frame;
+
+        if (button == _dragButton) {
+          button.frame = [_scrollView convertRect:frame toView:self];
+
+        } else {
+          button.frame = frame;
+        }
       }
       x += buttonWidth + kPadding;
       if (x >= minX+pageWidth) {
