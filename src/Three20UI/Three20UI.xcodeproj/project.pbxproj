@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -287,8 +287,8 @@
 		6EE736C811849FAB00A35176 /* libThree20Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE7366C11849C5800A35176 /* libThree20Core.a */; };
 		6EE738A61184ADB800A35176 /* libThree20Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE738A31184ADB400A35176 /* libThree20Network.a */; };
 		6EE739D01184BB0400A35176 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF31F3A0F352DF5000DE5D2 /* libThree20UI.a */; };
-                B613400F143BBAEA00B0AB42 /* TTTableViewCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B613400E143BBAEA00B0AB42 /* TTTableViewCellBackgroundView.m */; };
-                B6134011143BBB2000B0AB42 /* TTTableViewCellBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = B6134010143BBB2000B0AB42 /* TTTableViewCellBackgroundView.h */; };
+		B613400F143BBAEA00B0AB42 /* TTTableViewCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B613400E143BBAEA00B0AB42 /* TTTableViewCellBackgroundView.m */; };
+		B6134011143BBB2000B0AB42 /* TTTableViewCellBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = B6134010143BBB2000B0AB42 /* TTTableViewCellBackgroundView.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -726,8 +726,8 @@
 		6EE7364C11849B3D00A35176 /* UnitTests.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = UnitTests.xcconfig; path = Configurations/UnitTests.xcconfig; sourceTree = "<group>"; };
 		6EE7366611849C5800A35176 /* Three20Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Core.xcodeproj; path = ../Three20Core/Three20Core.xcodeproj; sourceTree = SOURCE_ROOT; };
 		6EE7389D1184ADB400A35176 /* Three20Network.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Network.xcodeproj; path = ../Three20Network/Three20Network.xcodeproj; sourceTree = SOURCE_ROOT; };
-                B613400E143BBAEA00B0AB42 /* TTTableViewCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTTableViewCellBackgroundView.m; path = Sources/TTTableViewCellBackgroundView.m; sourceTree = "<group>"; };
-                B6134010143BBB2000B0AB42 /* TTTableViewCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTTableViewCellBackgroundView.h; path = Headers/TTTableViewCellBackgroundView.h; sourceTree = "<group>"; };
+		B613400E143BBAEA00B0AB42 /* TTTableViewCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTTableViewCellBackgroundView.m; path = Sources/TTTableViewCellBackgroundView.m; sourceTree = "<group>"; };
+		B6134010143BBB2000B0AB42 /* TTTableViewCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTTableViewCellBackgroundView.h; path = Headers/TTTableViewCellBackgroundView.h; sourceTree = "<group>"; };
 		BEF31F3A0F352DF5000DE5D2 /* libThree20UI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libThree20UI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9E6C6210B6A8F800DE563C /* UIUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1430,7 +1430,7 @@
 			children = (
 				6E6455281184D4C500F08CB1 /* TTTableViewCell.h */,
 				6E6456581184D4DA00F08CB1 /* TTTableViewCell.m */,
-                                B6133FE9143BB76300B0AB42 /* Table Cell Background View */,
+				B6133FE9143BB76300B0AB42 /* Table Cell Background View */,
 				6E6458361184E10200F08CB1 /* Table Cells */,
 			);
 			name = "Table Cell";
@@ -1743,15 +1743,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-                B6133FE9143BB76300B0AB42 /* Table Cell Background View */ = {
-                        isa = PBXGroup;
-                        children = (
-                                B6134010143BBB2000B0AB42 /* TTTableViewCellBackgroundView.h */,
-                                B613400E143BBAEA00B0AB42 /* TTTableViewCellBackgroundView.m */,
-                        );
-                        name = "Table Cell Background View";
-                        sourceTree = "<group>";
-                };
+		B6133FE9143BB76300B0AB42 /* Table Cell Background View */ = {
+			isa = PBXGroup;
+			children = (
+				B6134010143BBB2000B0AB42 /* TTTableViewCellBackgroundView.h */,
+				B613400E143BBAEA00B0AB42 /* TTTableViewCellBackgroundView.m */,
+			);
+			name = "Table Cell Background View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1903,7 +1903,7 @@
 				66F2E85412D426A5006FB485 /* TTTableFooterInfiniteScrollView.h in Headers */,
 				66F2E85F12D426DA006FB485 /* TTTableViewNetworkEnabledDelegate.h in Headers */,
 				6DB1E37D13CA885B00A72466 /* TTLauncherPersistenceMode.h in Headers */,
-                                B6134011143BBB2000B0AB42 /* TTTableViewCellBackgroundView.h in Headers */,
+				B6134011143BBB2000B0AB42 /* TTTableViewCellBackgroundView.h in Headers */,
 				6DD20D35141D0C1B00916A4A /* TTTableSettingsItem.h in Headers */,
 				6DD20D3B141D0C4800916A4A /* TTTableSettingsItemCell.h in Headers */,
 				6D31FEDB14312683006C6B7F /* TTTableSection.h in Headers */,
@@ -1968,9 +1968,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Three20UI" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -2267,7 +2268,7 @@
 				666E18E912945430001C1D97 /* TTSplitViewController.m in Sources */,
 				66F2E85712D426AF006FB485 /* TTTableFooterInfiniteScrollView.m in Sources */,
 				66F2E86512D426EF006FB485 /* TTTableViewNetworkEnabledDelegate.m in Sources */,
-                                B613400F143BBAEA00B0AB42 /* TTTableViewCellBackgroundView.m in Sources */,
+				B613400F143BBAEA00B0AB42 /* TTTableViewCellBackgroundView.m in Sources */,
 				6DD20D37141D0C2800916A4A /* TTTableSettingsItem.m in Sources */,
 				6DD20D39141D0C3A00916A4A /* TTTableSettingsItemCell.m in Sources */,
 				6D31FEDD1431268C006C6B7F /* TTTableSection.m in Sources */,
@@ -2351,7 +2352,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Internal;
@@ -2366,7 +2366,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 			};
@@ -2378,13 +2377,11 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = octest;
 			};
@@ -2398,7 +2395,6 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2409,8 +2405,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
@@ -2424,7 +2418,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2437,7 +2430,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -2448,12 +2440,10 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = octest;
 			};
@@ -2465,10 +2455,8 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
