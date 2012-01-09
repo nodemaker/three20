@@ -182,7 +182,6 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
   }
 }
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -199,6 +198,12 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
   if (containerScrollView.contentOffset.y < 0)
     containerScrollView.contentInset = UIEdgeInsetsMake(kHeaderVisibleHeight, 0.0f, 0.0f, 0.0f);
   [UIView commitAnimations];
+
+  if ((containerScrollView.contentOffset.y==0)&&
+      ([containerScrollView isKindOfClass:[UITableView class]])) {
+
+    [containerScrollView setContentOffset:CGPointMake(0, -kHeaderVisibleHeight)];
+  }
 }
 
 
