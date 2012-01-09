@@ -23,7 +23,7 @@
 @interface TTTableViewController : TTModelViewController {
   UITableView*  _tableView;
   UIView*       _tableBannerView;
-  UIView*       _tableOverlayView;
+  UIScrollView*       _tableOverlayView;
   UIView*       _loadingView;
   UIView*       _errorView;
   UIView*       _emptyView;

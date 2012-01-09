@@ -141,17 +141,26 @@
 - (void)addToOverlayView:(UIView*)view {
   if (!_tableOverlayView) {
     CGRect frame = [self rectForOverlayView];
-    _tableOverlayView = [[UIView alloc] initWithFrame:frame];
+    _tableOverlayView = [[UIScrollView alloc] initWithFrame:frame];
     _tableOverlayView.autoresizesSubviews = YES;
     _tableOverlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth
     | UIViewAutoresizingFlexibleHeight;
+    _tableOverlayView.showsVerticalScrollIndicator = NO;
+    _tableOverlayView.showsHorizontalScrollIndicator = NO;
     NSInteger tableIndex = [_tableView.superview.subviews indexOfObject:_tableView];
     if (tableIndex != NSNotFound) {
+
+      [self updateTableDelegate];
+      if ([_tableDelegate respondsToSelector:@selector(tableView:willDisplayOverlayView:)]) {
+        id<TTTableViewDelegate> delegate = (id<TTTableViewDelegate>)_tableDelegate;
+        [delegate tableView:self.tableView willDisplayOverlayView:_tableOverlayView];
+      }
+
       [_tableView.superview addSubview:_tableOverlayView];
     }
   }
 
-  view.frame = _tableOverlayView.bounds;
+  view.frame = CGRectMake(0,0,_tableOverlayView.width,_tableOverlayView.height);
   view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   [_tableOverlayView addSubview:view];
 }
@@ -159,9 +168,16 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)resetOverlayView {
-  if (_tableOverlayView && !_tableOverlayView.subviews.count) {
-    [_tableOverlayView removeFromSuperview];
-    TT_RELEASE_SAFELY(_tableOverlayView);
+
+  if (_tableOverlayView) {
+    if ([_tableDelegate respondsToSelector:@selector(tableView:willResetOverlayView:)]) {
+      id<TTTableViewDelegate> delegate = (id<TTTableViewDelegate>)_tableDelegate;
+      [delegate tableView:self.tableView willResetOverlayView:_tableOverlayView];
+    }
+    if (!_tableOverlayView.subviews.count) {
+      [_tableOverlayView removeFromSuperview];
+      TT_RELEASE_SAFELY(_tableOverlayView);
+    }
   }
 }
 

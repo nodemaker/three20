@@ -113,7 +113,6 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 #pragma mark -
 #pragma mark UIScrollViewDelegate
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)scrollViewDidScroll:(UIScrollView*)scrollView {
   [super scrollViewDidScroll:scrollView];
@@ -131,12 +130,13 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
   // This is to prevent odd behavior with plain table section headers. They are affected by the
   // content inset, so if the table is scrolled such that there might be a section header abutting
   // the top, we need to clear the content inset.
+  UIScrollView* containerScrollView = (UIScrollView*)[_headerView superview];
   if (_model.isLoading) {
     if (scrollView.contentOffset.y >= 0) {
-      _controller.tableView.contentInset = UIEdgeInsetsZero;
+      containerScrollView.contentInset = UIEdgeInsetsZero;
 
     } else if (scrollView.contentOffset.y < 0) {
-      _controller.tableView.contentInset = UIEdgeInsetsMake(kHeaderVisibleHeight, 0, 0, 0);
+      containerScrollView.contentInset = UIEdgeInsetsMake(kHeaderVisibleHeight, 0, 0, 0);
     }
   }
 }
@@ -155,6 +155,32 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
   }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark TTTableViewDelegate
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)tableView:(UITableView *)tableView willDisplayOverlayView:(UIScrollView *)overlayView {
+  //Make the overlayview bounce and add the header view to the overlay view
+  overlayView.scrollEnabled = YES;
+  overlayView.bounces = YES;
+  overlayView.alwaysBounceVertical = YES;
+  overlayView.delegate = self;
+
+  [_headerView removeFromSuperview];
+  [overlayView addSubview:_headerView];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)tableView:(UITableView *)tableView willResetOverlayView:(UIScrollView *)overlayView {
+
+  //If the only view present is the header view then remove it
+  if ((overlayView.subviews.count==1)&&([overlayView.subviews containsObject:_headerView])){
+    [_headerView removeFromSuperview];
+    [_controller.tableView addSubview:_headerView];
+  }
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -168,10 +194,16 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:ttkDefaultFastTransitionDuration];
-  if (_controller.tableView.contentOffset.y < 0) {
-    _controller.tableView.contentInset = UIEdgeInsetsMake(kHeaderVisibleHeight, 0.0f, 0.0f, 0.0f);
-  }
+  UIScrollView* containerScrollView = (UIScrollView*)[_headerView superview];
+  if (containerScrollView.contentOffset.y < 0)
+    containerScrollView.contentInset = UIEdgeInsetsMake(kHeaderVisibleHeight, 0.0f, 0.0f, 0.0f);
   [UIView commitAnimations];
+
+  if ((containerScrollView.contentOffset.y==0)&&
+      ([containerScrollView isKindOfClass:[UITableView class]])) {
+
+    [containerScrollView setContentOffset:CGPointMake(0, -kHeaderVisibleHeight)];
+  }
 }
 
 
@@ -181,7 +213,8 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:ttkDefaultTransitionDuration];
-  _controller.tableView.contentInset = UIEdgeInsetsZero;
+  UIScrollView* containerScrollView = (UIScrollView*)[_headerView superview];
+  containerScrollView.contentInset = UIEdgeInsetsZero;
   [UIView commitAnimations];
 
   if ([model respondsToSelector:@selector(loadedTime)]) {
@@ -200,7 +233,8 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:ttkDefaultTransitionDuration];
-  _controller.tableView.contentInset = UIEdgeInsetsZero;
+  UIScrollView* containerScrollView = (UIScrollView*)[_headerView superview];
+  containerScrollView.contentInset = UIEdgeInsetsZero;
   [UIView commitAnimations];
 }
 
@@ -211,7 +245,8 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:ttkDefaultTransitionDuration];
-  _controller.tableView.contentInset = UIEdgeInsetsZero;
+  UIScrollView* containerScrollView = (UIScrollView*)[_headerView superview];
+  containerScrollView.contentInset = UIEdgeInsetsZero;
   [UIView commitAnimations];
 }
 
