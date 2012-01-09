@@ -196,7 +196,7 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:ttkDefaultFastTransitionDuration];
   UIScrollView* containerScrollView = (UIScrollView*)[_headerView superview];
-  if(containerScrollView.contentOffset.y < 0)
+  if (containerScrollView.contentOffset.y < 0)
     containerScrollView.contentInset = UIEdgeInsetsMake(kHeaderVisibleHeight, 0.0f, 0.0f, 0.0f);
   [UIView commitAnimations];
 }
