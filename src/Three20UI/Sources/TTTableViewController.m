@@ -679,7 +679,8 @@
       self.view.backgroundColor = backgroundColor;
 
           //Fix for grouped table view background colors in iPad in iOS 3.2 and higher
-          if ((TTIsPad())&&(_tableViewStyle==UITableViewStyleGrouped)&&(TTOSVersionIsAtLeast(3.2))) {
+	  if ((TTIsPad())&&(_tableViewStyle==UITableViewStyleGrouped)
+	      &&(TTOSVersionIsAtLeast(3.2))) {
 
                   if ([self.tableView respondsToSelector:@selector(backgroundView)]) {
                           _tableView.backgroundView = nil;
