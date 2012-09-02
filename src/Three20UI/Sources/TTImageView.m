@@ -43,6 +43,7 @@
 @synthesize urlPath             = _urlPath;
 @synthesize image               = _image;
 @synthesize defaultImage        = _defaultImage;
+@synthesize errorImage          = _errorImage;
 @synthesize autoresizesToImage  = _autoresizesToImage;
 @synthesize request				= _request;
 @synthesize autoresizeBounds    = _autoresizeBounds;
@@ -69,6 +70,7 @@
   TT_RELEASE_SAFELY(_urlPath);
   TT_RELEASE_SAFELY(_image);
   TT_RELEASE_SAFELY(_defaultImage);
+  TT_RELEASE_SAFELY(_errorImage);
   [super dealloc];
 }
 
@@ -140,6 +142,10 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)request:(TTURLRequest*)request didFailLoadWithError:(NSError*)error {
   TT_RELEASE_SAFELY(_request);
+
+  if (self.errorImage){
+    [self setImage:self.errorImage];
+  }
 
   [self imageViewDidFailLoadWithError:error];
   if ([_delegate respondsToSelector:@selector(imageView:didFailLoadWithError:)]) {
