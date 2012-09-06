@@ -36,8 +36,10 @@
 @interface TTTableViewDragRefreshDelegate : TTTableViewVarHeightDelegate {
   TTTableHeaderDragRefreshView* _headerView;
   id<TTModel>                   _model;
+  BOOL                          _movesDownWhenLoading;
 }
 
+@property (nonatomic, assign) BOOL movesDownWhenLoading;
 @property (nonatomic, retain) TTTableHeaderDragRefreshView* headerView;
 
 @end
