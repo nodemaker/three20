@@ -32,6 +32,7 @@
 // Style
 #import "Three20Style/TTGlobalStyle.h"
 #import "Three20Style/TTStyleSheet.h"
+#import "Three20Style/TTDefaultStyleSheet.h"
 
 // Network
 #import "Three20Network/TTURLRequestQueue.h"
@@ -139,7 +140,7 @@
     if (nil == _searchController) {
       UISearchBar* searchBar = [[[UISearchBar alloc] init] autorelease];
       [searchBar sizeToFit];
-
+      [searchBar setTintColor:TTSTYLEVAR(searchBarTintColor)];
       _searchController = [[TTSearchDisplayController alloc] initWithSearchBar:searchBar
                                                              contentsController:self];
     }

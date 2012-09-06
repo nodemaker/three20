@@ -168,8 +168,13 @@ TT_FIX_CATEGORY_BUG(NSDateAdditions)
       int hours = (int)((elapsed+TT_HOUR/2)/TT_HOUR);
       return [NSString stringWithFormat:TTLocalizedString(@"in %d hours", @""), hours];
     }
+    else if (elapsed < TT_MONTH){
+        int days = (int)((elapsed+TT_DAY/2)/TT_DAY);
+        return [NSString stringWithFormat:TTLocalizedString(@"in %d days", @""), days];
+    }
     else {
-      return [self formatDateTime];
+        int months = (int)((elapsed+TT_MONTH/2)/TT_MONTH);
+        return [NSString stringWithFormat:TTLocalizedString(@"in %d months", @""), months];
     }
   }
   else {
@@ -196,8 +201,13 @@ TT_FIX_CATEGORY_BUG(NSDateAdditions)
       int hours = (int)((elapsed+TT_HOUR/2)/TT_HOUR);
       return [NSString stringWithFormat:TTLocalizedString(@"%d hours ago", @""), hours];
 
+    } else if (elapsed < TT_MONTH) {
+        int days = (int)((elapsed+TT_DAY/2)/TT_DAY);
+        return [NSString stringWithFormat:TTLocalizedString(@"%d days ago", @""), days];
+
     } else {
-      return [self formatDateTime];
+        int months = (int)((elapsed+TT_MONTH/2)/TT_MONTH);
+        return [NSString stringWithFormat:TTLocalizedString(@"%d months ago", @""), months];
     }
   }
 }
