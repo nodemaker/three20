@@ -106,12 +106,13 @@ static const NSTimeInterval kPauseInterval = 0.4;
 - (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController*)controller {
   self.searchContentsController.navigationItem.rightBarButtonItem.enabled = NO;
   UIView* backgroundView = [self.searchBar viewWithTag:kTTSearchBarBackgroundTag];
+  [UIView beginAnimations:nil context:nil];
+  [UIView setAnimationDuration:TT_FAST_TRANSITION_DURATION];
   if (backgroundView) {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:TT_FAST_TRANSITION_DURATION];
     backgroundView.alpha = 0;
-    [UIView commitAnimations];
   }
+  _searchResultsViewController.tableOverlayView.alpha = 1;
+  [UIView commitAnimations];
 //  if (!self.searchContentsController.navigationController) {
 //    [UIView beginAnimations:nil context:nil];
 //    self.searchBar.superview.top -= self.searchBar.screenY - TTStatusHeight();
@@ -131,13 +132,13 @@ static const NSTimeInterval kPauseInterval = 0.4;
   self.searchContentsController.navigationItem.rightBarButtonItem.enabled = YES;
 
   UIView* backgroundView = [self.searchBar viewWithTag:kTTSearchBarBackgroundTag];
+  [UIView beginAnimations:nil context:nil];
+  [UIView setAnimationDuration:TT_FAST_TRANSITION_DURATION];
   if (backgroundView) {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:TT_FAST_TRANSITION_DURATION];
     backgroundView.alpha = 1;
-    _searchResultsViewController.tableOverlayView.alpha = 0;
-    [UIView commitAnimations];
   }
+  _searchResultsViewController.tableOverlayView.alpha = 0;
+  [UIView commitAnimations];
 
 //  if (!self.searchContentsController.navigationController) {
 //    [UIView beginAnimations:nil context:nil];
