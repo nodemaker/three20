@@ -36,8 +36,9 @@ static const NSTimeInterval kPauseInterval = 0.4;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation TTSearchDisplayController
 
-@synthesize searchResultsViewController = _searchResultsViewController;
-@synthesize pausesBeforeSearching       = _pausesBeforeSearching;
+@synthesize searchResultsViewController    = _searchResultsViewController;
+@synthesize pausesBeforeSearching          = _pausesBeforeSearching;
+@synthesize hidesNavigationBarOnActivation = _hidesNavigationBarOnActivation;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,6 +46,7 @@ static const NSTimeInterval kPauseInterval = 0.4;
 	self = [super initWithSearchBar:searchBar contentsController:controller];
   if (self) {
     self.delegate = self;
+    self.hidesNavigationBarOnActivation = YES;
   }
 
   return self;
@@ -145,6 +147,29 @@ static const NSTimeInterval kPauseInterval = 0.4;
 //  }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setActive:(BOOL)visible animated:(BOOL)animated;
+{
+  if (self.active == visible) return;
+
+  if (self.hidesNavigationBarOnActivation){
+    [super setActive:visible animated:animated];
+
+  } else {
+
+    [self.searchContentsController.navigationController setNavigationBarHidden:YES animated:NO];
+    [super setActive:visible animated:animated];
+    [self.searchContentsController.navigationController setNavigationBarHidden:NO animated:NO];
+
+    if (visible) {
+      [self.searchBar becomeFirstResponder];
+
+    } else {
+      [self.searchBar resignFirstResponder];
+    }
+  }
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController*)controller {
@@ -216,6 +241,5 @@ static const NSTimeInterval kPauseInterval = 0.4;
     _searchResultsDelegate2 = [searchResultsDelegate retain];
   }
 }
-
 
 @end
