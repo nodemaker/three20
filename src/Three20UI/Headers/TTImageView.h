@@ -31,6 +31,7 @@
   NSString*     _urlPath;
   UIImage*      _image;
   UIImage*      _defaultImage;
+  UIImage*      _errorImage;
   BOOL          _autoresizesToImage;
 
   id<TTImageViewDelegate> _delegate;
@@ -47,6 +48,11 @@
  * specified, this image will be displayed indefinitely.
  */
 @property (nonatomic, retain) UIImage* defaultImage;
+
+/**
+ * The error image that is displayed when the image fails to load.
+ */
+@property (nonatomic, retain) UIImage* errorImage;
 
 /**
  * The image that is currently being displayed.

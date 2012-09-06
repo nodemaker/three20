@@ -86,7 +86,8 @@ TT_FIX_CATEGORY_BUG(TTImageViewInternal)
       // If both were specified, leave the frame as is.
     }
 
-    if (nil == _defaultImage || image != _defaultImage) {
+    if ((nil == _defaultImage || image != _defaultImage)
+	&&(nil == _errorImage || image != _errorImage)) {
       // Only send the notification if there's no default image or this is a new image.
       [self imageViewDidLoadImage:image];
       if ([_delegate respondsToSelector:@selector(imageView:didLoadImage:)]) {
