@@ -32,6 +32,7 @@
   UIImage*      _image;
   UIImage*      _defaultImage;
   BOOL          _autoresizesToImage;
+  CGSize        _autoresizeBounds;
 
   id<TTImageViewDelegate> _delegate;
 }
@@ -60,6 +61,13 @@
  * @default NO
  */
 @property (nonatomic) BOOL autoresizesToImage;
+
+/**
+ * When autoresizing it sets itself within this size
+ *
+ * @default it resizes to the size of the image
+ */
+@property (nonatomic, assign) CGSize autoresizeBounds;
 
 /**
  * Is an asynchronous request currently active?
