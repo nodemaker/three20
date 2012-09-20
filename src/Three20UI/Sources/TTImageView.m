@@ -46,6 +46,7 @@
 @synthesize errorImage          = _errorImage;
 @synthesize autoresizesToImage  = _autoresizesToImage;
 @synthesize request				= _request;
+@synthesize autoresizeBounds    = _autoresizeBounds;
 
 @synthesize delegate = _delegate;
 
@@ -55,6 +56,7 @@
 	self = [super initWithFrame:frame];
   if (self) {
     _autoresizesToImage = NO;
+    _autoresizeBounds = CGSizeMake(0,0);
   }
   return self;
 }
