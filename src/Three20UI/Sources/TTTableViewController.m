@@ -149,9 +149,9 @@
     if (tableIndex != NSNotFound) {
 
       [self updateTableDelegate];
-      if ([_tableDelegate respondsToSelector:@selector(tableView:willDisplayOverlayView:)]) {
+      if ([_tableDelegate respondsToSelector:@selector(tableView:willAddView:toOverlayView:)]) {
         id<TTTableViewDelegate> delegate = (id<TTTableViewDelegate>)_tableDelegate;
-	    [delegate tableView:self.tableView willDisplayOverlayView:_tableOverlayView];
+	    [delegate tableView:self.tableView willAddView:view toOverlayView:_tableOverlayView];
       }
 
       [_tableView.superview addSubview:_tableOverlayView];
