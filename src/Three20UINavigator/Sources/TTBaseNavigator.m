@@ -158,6 +158,12 @@ __attribute__((weak_import));
   return navigator;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (UIViewController*)resetRootViewController {
+
+    [self setRootViewController:[[[[self navigationControllerClass] alloc] init] autorelease]];
+    return self.rootViewController;
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -274,7 +280,7 @@ __attribute__((weak_import));
     // If this is the first controller, and it is not a "container", forcibly put
     // a navigation controller at the root of the controller hierarchy.
     if (nil == _rootViewController && !isContainer) {
-      [self setRootViewController:[[[[self navigationControllerClass] alloc] init] autorelease]];
+      [self resetRootViewController];
     }
 
     if (nil != parentURLPath) {
