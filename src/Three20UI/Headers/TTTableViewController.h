@@ -153,4 +153,9 @@
  */
 - (CGRect)rectForBannerView;
 
+/**
+ * Update Table Delegate
+ */
+- (void)updateTableDelegate;
+
 @end
