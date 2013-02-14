@@ -52,4 +52,10 @@
 @optional
 - (void)tableView:(UITableView*)tableView touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event;
 
+//Methods to enable the delegate to customize the overlay view
+- (void)tableView:(UITableView *)tableView willAddView:(UIView*)view
+                                         toOverlayView:(UIView *)overlayView;
+- (void)tableView:(UITableView *)tableView willResetOverlayView:(UIView *)overlayView;
+
+
 @end

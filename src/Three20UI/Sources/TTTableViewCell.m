@@ -15,6 +15,8 @@
 //
 
 #import "Three20UI/TTTableViewCell.h"
+#import "Three20UI/TTTableView.h"
+#import "Three20UI/UIViewAdditions.h"
 
 // UICommon
 #import "Three20UICommon/TTGlobalUICommon.h"
@@ -65,5 +67,29 @@ const NSInteger kTableMessageTextLineCount = 2;
 - (void)setObject:(id)object {
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * The cell is not highlighted in case it has a highlighted label
+ */
+- (void)setHighlighted: (BOOL)highlighted animated: (BOOL)animated
+{
+    TTTableView* tableView = (TTTableView*)[self ancestorOrSelfWithClass:[TTTableView class]];
+    if (!tableView.highlightedLabel) {
+	[super setHighlighted:highlighted animated:animated];
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * The selection of the cell is also disabled in case it has a highlighted label
+ */
+- (void)setSelected: (BOOL)selected animated: (BOOL)animated
+{
+    TTTableView* tableView = (TTTableView*)[self ancestorOrSelfWithClass:[TTTableView class]];
+    if (!tableView.highlightedLabel) {
+	[super setSelected:selected animated:animated];
+    }
+}
 
 @end

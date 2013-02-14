@@ -25,5 +25,6 @@
 @property (nonatomic, readonly) UIColor* tableRefreshHeaderTextShadowColor;
 @property (nonatomic, readonly) CGSize   tableRefreshHeaderTextShadowOffset;
 @property (nonatomic, readonly) UIImage* tableRefreshHeaderArrowImage;
+@property (nonatomic, readonly) UIActivityIndicatorViewStyle tableRefreshHeaderActivityViewStyle;
 
 @end

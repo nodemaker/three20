@@ -36,8 +36,9 @@ static const NSTimeInterval kPauseInterval = 0.4;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation TTSearchDisplayController
 
-@synthesize searchResultsViewController = _searchResultsViewController;
-@synthesize pausesBeforeSearching       = _pausesBeforeSearching;
+@synthesize searchResultsViewController    = _searchResultsViewController;
+@synthesize pausesBeforeSearching          = _pausesBeforeSearching;
+@synthesize hidesNavigationBarOnActivation = _hidesNavigationBarOnActivation;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,6 +46,7 @@ static const NSTimeInterval kPauseInterval = 0.4;
 	self = [super initWithSearchBar:searchBar contentsController:controller];
   if (self) {
     self.delegate = self;
+    self.hidesNavigationBarOnActivation = YES;
   }
 
   return self;
@@ -104,12 +106,13 @@ static const NSTimeInterval kPauseInterval = 0.4;
 - (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController*)controller {
   self.searchContentsController.navigationItem.rightBarButtonItem.enabled = NO;
   UIView* backgroundView = [self.searchBar viewWithTag:kTTSearchBarBackgroundTag];
+  [UIView beginAnimations:nil context:nil];
+  [UIView setAnimationDuration:TT_FAST_TRANSITION_DURATION];
   if (backgroundView) {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:TT_FAST_TRANSITION_DURATION];
     backgroundView.alpha = 0;
-    [UIView commitAnimations];
   }
+  _searchResultsViewController.tableOverlayView.alpha = 1;
+  [UIView commitAnimations];
 //  if (!self.searchContentsController.navigationController) {
 //    [UIView beginAnimations:nil context:nil];
 //    self.searchBar.superview.top -= self.searchBar.screenY - TTStatusHeight();
@@ -129,19 +132,42 @@ static const NSTimeInterval kPauseInterval = 0.4;
   self.searchContentsController.navigationItem.rightBarButtonItem.enabled = YES;
 
   UIView* backgroundView = [self.searchBar viewWithTag:kTTSearchBarBackgroundTag];
+  [UIView beginAnimations:nil context:nil];
+  [UIView setAnimationDuration:TT_FAST_TRANSITION_DURATION];
   if (backgroundView) {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:TT_FAST_TRANSITION_DURATION];
     backgroundView.alpha = 1;
-    _searchResultsViewController.tableOverlayView.alpha = 0;
-    [UIView commitAnimations];
   }
+  _searchResultsViewController.tableOverlayView.alpha = 0;
+  [UIView commitAnimations];
 
 //  if (!self.searchContentsController.navigationController) {
 //    [UIView beginAnimations:nil context:nil];
 //    self.searchBar.superview.top += self.searchBar.top - TTStatusHeight();
 //    [UIView commitAnimations];
 //  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setActive:(BOOL)visible animated:(BOOL)animated;
+{
+  if (self.active == visible) return;
+
+  if (self.hidesNavigationBarOnActivation){
+    [super setActive:visible animated:animated];
+
+  } else {
+
+    [self.searchContentsController.navigationController setNavigationBarHidden:YES animated:NO];
+    [super setActive:visible animated:animated];
+    [self.searchContentsController.navigationController setNavigationBarHidden:NO animated:NO];
+
+    if (visible) {
+      [self.searchBar becomeFirstResponder];
+
+    } else {
+      [self.searchBar resignFirstResponder];
+    }
+  }
 }
 
 
@@ -215,6 +241,5 @@ static const NSTimeInterval kPauseInterval = 0.4;
     _searchResultsDelegate2 = [searchResultsDelegate retain];
   }
 }
-
 
 @end

@@ -282,4 +282,9 @@
  */
 - (void)resetDefaults;
 
+/**
+ * Create root view controller.
+ */
+- (UIViewController*)resetRootViewController;
+
 @end
