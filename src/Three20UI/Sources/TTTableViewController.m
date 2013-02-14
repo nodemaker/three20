@@ -147,6 +147,13 @@
     | UIViewAutoresizingFlexibleHeight;
     NSInteger tableIndex = [_tableView.superview.subviews indexOfObject:_tableView];
     if (tableIndex != NSNotFound) {
+
+      [self updateTableDelegate];
+      if ([_tableDelegate respondsToSelector:@selector(tableView:willAddView:toOverlayView:)]) {
+        id<TTTableViewDelegate> delegate = (id<TTTableViewDelegate>)_tableDelegate;
+	    [delegate tableView:self.tableView willAddView:view toOverlayView:_tableOverlayView];
+      }
+
       [_tableView.superview addSubview:_tableOverlayView];
     }
   }
@@ -160,6 +167,12 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)resetOverlayView {
   if (_tableOverlayView && !_tableOverlayView.subviews.count) {
+
+    if ([_tableDelegate respondsToSelector:@selector(tableView:willResetOverlayView:)]) {
+      id<TTTableViewDelegate> delegate = (id<TTTableViewDelegate>)_tableDelegate;
+      [delegate tableView:self.tableView willResetOverlayView:_tableOverlayView];
+    }
+
     [_tableOverlayView removeFromSuperview];
     TT_RELEASE_SAFELY(_tableOverlayView);
   }
@@ -677,18 +690,10 @@
     if (backgroundColor) {
       _tableView.backgroundColor = backgroundColor;
       self.view.backgroundColor = backgroundColor;
-
-	  //Fix for grouped table view background colors in iPad in iOS 3.2 and higher
-	  if ((TTIsPad())&&(_tableViewStyle==UITableViewStyleGrouped)
-	      &&(TTOSVersionIsAtLeast(3.2))) {
-
-		  if ([self.tableView respondsToSelector:@selector(backgroundView)]) {
-			  _tableView.backgroundView = nil;
-
-			  [_tableView setBackgroundView:[[[UIView alloc] init] autorelease]];
-			  [_tableView setBackgroundColor:UIColor.clearColor];
-		  }
-	  }
+      if (_tableViewStyle==UITableViewStyleGrouped) {
+        [_tableView setBackgroundView:[[[UIView alloc] init] autorelease]];
+        [_tableView setBackgroundColor:UIColor.clearColor];
+      }
     }
     [self.view addSubview:_tableView];
   }

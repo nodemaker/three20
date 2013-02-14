@@ -57,6 +57,7 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 @implementation TTTableViewDragRefreshDelegate
 
 @synthesize headerView = _headerView;
+@synthesize movesDownWhenLoading = _movesDownWhenLoading;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -69,6 +70,7 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 - (id)initWithController:(TTTableViewController*)controller {
 	self = [super initWithController:controller];
   if (self) {
+    _movesDownWhenLoading = NO;
     // Add our refresh header
     _headerView = [[TTTableHeaderDragRefreshView alloc]
                           initWithFrame:CGRectMake(0,
@@ -170,6 +172,8 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
   [UIView setAnimationDuration:ttkDefaultFastTransitionDuration];
   if (_controller.tableView.contentOffset.y < 0) {
     _controller.tableView.contentInset = UIEdgeInsetsMake(kHeaderVisibleHeight, 0.0f, 0.0f, 0.0f);
+  }else if ((_movesDownWhenLoading)&&(_controller.tableView.contentOffset.y==0)){
+    [_controller.tableView setContentOffset:CGPointMake(0, -kHeaderVisibleHeight)];
   }
   [UIView commitAnimations];
 }
