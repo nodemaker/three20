@@ -59,12 +59,43 @@ TT_FIX_CATEGORY_BUG(TTImageViewInternal)
     [self updateLayer];
 
     CGRect frame = self.frame;
+    CGSize autoresizeBounds = self.autoresizeBounds;
     if (_autoresizesToImage) {
-      self.width = image.size.width;
-      self.height = image.size.height;
+
+	// If no width or height have been specified, then autoresize to the image.
+	if ((!autoresizeBounds.width&&!autoresizeBounds.height)
+	    ||!image.size.width||!image.size.height){
+
+	    self.width = image.size.width;
+	    self.height = image.size.height;
+
+	} else if (autoresizeBounds.width && !autoresizeBounds.height) {
+
+	    self.width = MIN(image.size.width,autoresizeBounds.width);
+	    self.height =  floor((self.width/image.size.width)*image.size.height);
+
+	} else if (!autoresizeBounds.width && autoresizeBounds.height) {
+
+	    self.height = MIN(image.size.height,autoresizeBounds.height);
+	    self.width =  floor((self.height/image.size.height)*image.size.width);
+
+	} else {
+
+	    CGFloat hfactor = image.size.width/autoresizeBounds.width;
+	    CGFloat vfactor = image.size.height/autoresizeBounds.height;
+
+	    if (hfactor>vfactor){
+		self.width = MIN(image.size.width,autoresizeBounds.width);
+		self.height =  floor((self.width/image.size.width)*image.size.height);
+
+	    } else {
+		self.height = MIN(image.size.height,autoresizeBounds.height);
+		self.width =  floor((self.height/image.size.height)*image.size.width);
+	    }
+	}
 
     } else {
-      // Logical flow:
+      // Logical flow:fafa
       // If no width or height have been specified, then autoresize to the image.
       if (!frame.size.width && !frame.size.height) {
         self.width = image.size.width;
