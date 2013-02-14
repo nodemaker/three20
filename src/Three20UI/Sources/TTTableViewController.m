@@ -147,6 +147,13 @@
     | UIViewAutoresizingFlexibleHeight;
     NSInteger tableIndex = [_tableView.superview.subviews indexOfObject:_tableView];
     if (tableIndex != NSNotFound) {
+
+      [self updateTableDelegate];
+      if ([_tableDelegate respondsToSelector:@selector(tableView:willAddView:toOverlayView:)]) {
+        id<TTTableViewDelegate> delegate = (id<TTTableViewDelegate>)_tableDelegate;
+	    [delegate tableView:self.tableView willAddView:view toOverlayView:_tableOverlayView];
+      }
+
       [_tableView.superview addSubview:_tableOverlayView];
     }
   }
@@ -160,6 +167,12 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)resetOverlayView {
   if (_tableOverlayView && !_tableOverlayView.subviews.count) {
+
+    if ([_tableDelegate respondsToSelector:@selector(tableView:willResetOverlayView:)]) {
+      id<TTTableViewDelegate> delegate = (id<TTTableViewDelegate>)_tableDelegate;
+      [delegate tableView:self.tableView willResetOverlayView:_tableOverlayView];
+    }
+
     [_tableOverlayView removeFromSuperview];
     TT_RELEASE_SAFELY(_tableOverlayView);
   }
