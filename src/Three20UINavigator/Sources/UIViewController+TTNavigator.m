@@ -78,18 +78,20 @@ TT_FIX_CATEGORY_BUG(UIViewController_TTNavigator)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 + (void)doNavigatorGarbageCollection {
-  NSMutableSet* controllers = [UIViewController ttNavigatorControllers];
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
+	NSMutableSet* controllers = [UIViewController ttNavigatorControllers];
 
-  [self doGarbageCollectionWithSelector: @selector(unsetNavigatorProperties)
-                          controllerSet: controllers];
+	[self doGarbageCollectionWithSelector: @selector(unsetNavigatorProperties)
+				controllerSet: controllers];
 
-  if ([controllers count] == 0) {
-    TTDCONDITIONLOG(TTDFLAG_CONTROLLERGARBAGECOLLECTION,
-                    @"Killing the navigator garbage collector.");
-    [gsGarbageCollectorTimer invalidate];
-    TT_RELEASE_SAFELY(gsGarbageCollectorTimer);
-    TT_RELEASE_SAFELY(gsNavigatorControllers);
-  }
+	if ([controllers count] == 0) {
+	    TTDCONDITIONLOG(TTDFLAG_CONTROLLERGARBAGECOLLECTION,
+			    @"Killing the navigator garbage collector.");
+	    [gsGarbageCollectorTimer invalidate];
+	    TT_RELEASE_SAFELY(gsGarbageCollectorTimer);
+	    TT_RELEASE_SAFELY(gsNavigatorControllers);
+	}
+    });
 }
 
 

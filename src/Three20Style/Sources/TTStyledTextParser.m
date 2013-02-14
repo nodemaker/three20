@@ -147,8 +147,11 @@
 
       NSRange subSearchRange = NSMakeRange(startRange.location,
                                            string.length - startRange.location);
-      NSRange endRange = [string rangeOfString:@" " options:NSCaseInsensitiveSearch
-                                 range:subSearchRange];
+      NSCharacterSet* endRangeCharacterSet =
+      [NSCharacterSet characterSetWithCharactersInString:@" )(\"\'"];
+      NSRange endRange =
+      [string rangeOfCharacterFromSet:endRangeCharacterSet options:NSCaseInsensitiveSearch
+                                range:subSearchRange];
       if (endRange.location == NSNotFound) {
         NSString* URL = [string substringWithRange:subSearchRange];
         TTStyledLinkNode* node = [[[TTStyledLinkNode alloc] initWithText:URL] autorelease];

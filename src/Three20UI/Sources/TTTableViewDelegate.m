@@ -144,6 +144,21 @@ static const NSUInteger kFirstTableSection = 0;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /**
+ * If a label is already selected in the cell the cell selection is disabled.
+ */
+- (NSIndexPath*)tableView:(UITableView*)tableView willSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+    if ([tableView isKindOfClass:[TTTableView class]]){
+
+	TTTableView* ttTableView = (TTTableView*)tableView;
+	if (ttTableView.highlightedLabel) {
+	    return nil;
+	}
+    }
+    return indexPath;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/**
  * When the user taps a cell item, we check whether the tapped item has an attached URL and, if
  * it has one, we navigate to it. This also handles the logic for "Load more" buttons.
  */
