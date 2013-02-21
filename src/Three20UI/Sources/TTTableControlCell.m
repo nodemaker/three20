@@ -28,6 +28,10 @@
 // Core
 #import "Three20Core/TTCorePreprocessorMacros.h"
 
+// Style
+#import "Three20Style/TTGlobalStyle.h"
+#import "Three20Style/TTDefaultStyleSheet.h"
+
 static const CGFloat kDefaultTextViewLines = 5.0f;
 static const CGFloat kControlPadding = 8.0f;
 
@@ -45,6 +49,8 @@ static const CGFloat kControlPadding = 8.0f;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)identifier {
 	self = [super initWithStyle:style reuseIdentifier:identifier];
   if (self) {
+
+    self.textLabel.font = TTSTYLEVAR(tableTitleFont);
     self.selectionStyle = UITableViewCellSelectionStyleNone;
   }
 
