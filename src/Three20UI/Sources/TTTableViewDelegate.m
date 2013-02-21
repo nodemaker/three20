@@ -93,7 +93,8 @@ static const NSUInteger kFirstTableSection = 0;
  * drawing ourselves.
  */
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-  if (tableView.style == UITableViewStylePlain && TTSTYLEVAR(tableHeaderTintColor)) {
+  if ((tableView.style == UITableViewStylePlain && TTSTYLEVAR(tableHeaderTintColor))
+      ||(tableView.style == UITableViewStyleGrouped)) {
     if ([tableView.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)]) {
       NSString* title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
       if (title.length > 0) {
@@ -110,7 +111,8 @@ static const NSUInteger kFirstTableSection = 0;
           if (nil == _headers) {
             _headers = [[NSMutableDictionary alloc] init];
           }
-          header = [[[TTTableHeaderView alloc] initWithTitle:title] autorelease];
+	  header = [[[TTTableHeaderView alloc] initWithTitle:title
+					      tableViewStyle:tableView.style] autorelease];
           [_headers setObject:header forKey:title];
         }
         return header;

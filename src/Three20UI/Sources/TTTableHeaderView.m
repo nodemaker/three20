@@ -32,28 +32,34 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation TTTableHeaderView
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (id)initWithTitle:(NSString*)title tableViewStyle:(UITableViewStyle)tableViewStyle {
+    self = [super init];
+    if (self) {
+	self.backgroundColor = [UIColor clearColor];
+	self.style = (tableViewStyle==UITableViewStylePlain)?TTSTYLE(tableHeader):nil;
+
+	_label = [[UILabel alloc] init];
+	_label.text = title;
+	_label.backgroundColor = [UIColor clearColor];
+	_label.textColor = TTSTYLEVAR(tableHeaderTextColor)
+	? TTSTYLEVAR(tableHeaderTextColor)
+	: TTSTYLEVAR(linkTextColor);
+	_label.shadowColor = TTSTYLEVAR(tableHeaderShadowColor)
+	? TTSTYLEVAR(tableHeaderShadowColor)
+	: [UIColor clearColor];
+	_label.shadowOffset = TTSTYLEVAR(tableHeaderShadowOffset);
+	_label.font = (tableViewStyle==UITableViewStylePlain)
+		      ? TTSTYLEVAR(tableHeaderPlainFont)
+		      : TTSTYLEVAR(tableHeaderGroupedFont);
+	[self addSubview:_label];
+    }
+    return self;
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithTitle:(NSString*)title {
-	self = [super init];
-  if (self) {
-    self.backgroundColor = [UIColor clearColor];
-    self.style = TTSTYLE(tableHeader);
-
-    _label = [[UILabel alloc] init];
-    _label.text = title;
-    _label.backgroundColor = [UIColor clearColor];
-    _label.textColor = TTSTYLEVAR(tableHeaderTextColor)
-                       ? TTSTYLEVAR(tableHeaderTextColor)
-                       : TTSTYLEVAR(linkTextColor);
-    _label.shadowColor = TTSTYLEVAR(tableHeaderShadowColor)
-                         ? TTSTYLEVAR(tableHeaderShadowColor)
-                         : [UIColor clearColor];
-    _label.shadowOffset = TTSTYLEVAR(tableHeaderShadowOffset);
-    _label.font = TTSTYLEVAR(tableHeaderPlainFont);
-    [self addSubview:_label];
-  }
-
+  self = [self initWithTitle:title tableViewStyle:UITableViewStylePlain];
   return self;
 }
 

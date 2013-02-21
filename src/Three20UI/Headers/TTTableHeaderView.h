@@ -22,5 +22,5 @@
 }
 
 - (id)initWithTitle:(NSString*)title;
-
+- (id)initWithTitle:(NSString*)title tableViewStyle:(UITableViewStyle)tableViewStyle;
 @end
