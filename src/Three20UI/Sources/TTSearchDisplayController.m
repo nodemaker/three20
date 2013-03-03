@@ -39,7 +39,7 @@ static const NSTimeInterval kPauseInterval = 0.4;
 @synthesize searchResultsViewController    = _searchResultsViewController;
 @synthesize pausesBeforeSearching          = _pausesBeforeSearching;
 @synthesize hidesNavigationBarOnActivation = _hidesNavigationBarOnActivation;
-
+@synthesize pausesTimerInterval            = _pauseTimerInterval;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithSearchBar:(UISearchBar*)searchBar contentsController:(UIViewController*)controller {
@@ -47,6 +47,7 @@ static const NSTimeInterval kPauseInterval = 0.4;
   if (self) {
     self.delegate = self;
     self.hidesNavigationBarOnActivation = YES;
+    self.pausesTimerInterval = kPauseInterval;
   }
 
   return self;
@@ -84,7 +85,7 @@ static const NSTimeInterval kPauseInterval = 0.4;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)restartPauseTimer {
   TT_INVALIDATE_TIMER(_pauseTimer);
-  _pauseTimer = [NSTimer scheduledTimerWithTimeInterval:kPauseInterval target:self
+  _pauseTimer = [NSTimer scheduledTimerWithTimeInterval:self.pausesTimerInterval target:self
                          selector:@selector(searchAfterPause) userInfo:nil repeats:NO];
 }
 
@@ -221,7 +222,7 @@ static const NSTimeInterval kPauseInterval = 0.4;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)searchDisplayController:(UISearchDisplayController*)controller
         shouldReloadTableForSearchScope:(NSInteger)searchOption {
-  [_searchResultsViewController invalidateModel];
+  //[_searchResultsViewController invalidateModel];
   [_searchResultsViewController.dataSource search:self.searchBar.text];
   return NO;
 }
