@@ -119,14 +119,21 @@ static const NSTimeInterval kPauseInterval = 0.4;
 //    self.searchBar.superview.top -= self.searchBar.screenY - TTStatusHeight();
 //    [UIView commitAnimations];
 //  }
+    if ([self.searchDisplayDelegate
+         respondsToSelector:@selector(searchDisplayControllerWillBeginSearch:)]){
+        [self.searchDisplayDelegate searchDisplayControllerWillBeginSearch:self];
+    }
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController*)controller {
   [_searchResultsViewController updateView];
+  if ([self.searchDisplayDelegate
+       respondsToSelector:@selector(searchDisplayControllerDidBeginSearch:)]){
+    [self.searchDisplayDelegate searchDisplayControllerDidBeginSearch:self];
+  }
 }
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController*)controller {
@@ -146,6 +153,10 @@ static const NSTimeInterval kPauseInterval = 0.4;
 //    self.searchBar.superview.top += self.searchBar.top - TTStatusHeight();
 //    [UIView commitAnimations];
 //  }
+    if ([self.searchDisplayDelegate
+         respondsToSelector:@selector(searchDisplayControllerWillEndSearch:)]){
+        [self.searchDisplayDelegate searchDisplayControllerWillEndSearch:self];
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -174,9 +185,12 @@ static const NSTimeInterval kPauseInterval = 0.4;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController*)controller {
-  [self resetResults];
+    [self resetResults];
+    if ([self.searchDisplayDelegate
+         respondsToSelector:@selector(searchDisplayControllerDidEndSearch:)]){
+        [self.searchDisplayDelegate searchDisplayControllerDidEndSearch:self];
+    }
 }
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)searchDisplayController:(UISearchDisplayController *)controller

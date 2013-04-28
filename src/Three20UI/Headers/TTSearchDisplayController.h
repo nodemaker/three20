@@ -19,6 +19,7 @@
 
 @protocol TTTableViewDataSource;
 @class TTTableViewController;
+@protocol TTSearchDisplayDelegate;
 
 extern const int kTTSearchBarBackgroundTag;
 
@@ -44,6 +45,14 @@ extern const int kTTSearchBarBackgroundTag;
 @property (nonatomic)         BOOL                   pausesBeforeSearching;
 @property (nonatomic)         BOOL                   hidesNavigationBarOnActivation;
 @property (nonatomic)         NSTimeInterval         pausesTimerInterval;
+@property (nonatomic,assign)  id<TTSearchDisplayDelegate> searchDisplayDelegate;
 
+@end
 
+@protocol TTSearchDisplayDelegate <NSObject>
+@optional
+- (void) searchDisplayControllerWillBeginSearch:(TTSearchDisplayController *)controller;
+- (void) searchDisplayControllerDidBeginSearch:(TTSearchDisplayController *)controller;
+- (void) searchDisplayControllerWillEndSearch:(TTSearchDisplayController *)controller;
+- (void) searchDisplayControllerDidEndSearch:(TTSearchDisplayController *)controller;
 @end
