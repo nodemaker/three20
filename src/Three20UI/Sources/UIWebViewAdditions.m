@@ -14,13 +14,13 @@
 // limitations under the License.
 //
 
-#import "Three20UI/UIWebViewAdditions.h"
+#import "UIWebViewAdditions.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 // UI
-#import "Three20UI/UIViewAdditions.h"
+#import "UIViewAdditions.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -29,7 +29,6 @@
 /**
  * Additions.
  */
-TT_FIX_CATEGORY_BUG(UIWebViewAdditions)
 
 @implementation UIWebView (TTCategory)
 

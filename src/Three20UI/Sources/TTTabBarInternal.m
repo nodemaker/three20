@@ -14,14 +14,14 @@
 // limitations under the License.
 //
 
-#import "Three20UI/private/TTTabBarInternal.h"
+#import "TTTabBarInternal.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 // UI
-#import "Three20UI/TTTab.h"
-#import "Three20UI/UIViewAdditions.h"
+#import "TTTab.h"
+#import "UIViewAdditions.h"
 
         CGFloat   kTabMargin      = 10.0f;
 const   NSInteger kMaxBadgeNumber = 99.0f;
@@ -31,7 +31,6 @@ static  CGFloat   kPadding        = 10.0f;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-TT_FIX_CATEGORY_BUG(TTTabBarInternal)
 
 @implementation TTTabBar (TTInternal)
 

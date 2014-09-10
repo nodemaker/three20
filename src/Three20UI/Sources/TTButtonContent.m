@@ -14,21 +14,21 @@
 // limitations under the License.
 //
 
-#import "Three20UI/private/TTButtonContent.h"
+#import "TTButtonContent.h"
 
 // Style
-#import "Three20Style/TTImageStyle.h"
+#import "TTImageStyle.h"
 
 // UI
-#import "Three20UI/TTImageViewDelegate.h"
+#import "TTImageViewDelegate.h"
 
 // Network
-#import "Three20Network/TTURLImageResponse.h"
-#import "Three20Network/TTURLCache.h"
-#import "Three20Network/TTURLRequest.h"
+#import "TTURLImageResponse.h"
+#import "TTURLCache.h"
+#import "TTURLRequest.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

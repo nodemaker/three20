@@ -14,32 +14,32 @@
 // limitations under the License.
 //
 
-#import "Three20UINavigator/TTBaseNavigator.h"
+#import "TTBaseNavigator.h"
 
 // UINavigator
-#import "Three20UINavigator/TTGlobalNavigatorMetrics.h"
-#import "Three20UINavigator/TTNavigatorDelegate.h"
-#import "Three20UINavigator/TTNavigatorRootContainer.h"
-#import "Three20UINavigator/TTBaseNavigationController.h"
-#import "Three20UINavigator/TTURLAction.h"
-#import "Three20UINavigator/TTURLMap.h"
-#import "Three20UINavigator/TTURLNavigatorPattern.h"
-#import "Three20UINavigator/UIViewController+TTNavigator.h"
+#import "TTGlobalNavigatorMetrics.h"
+#import "TTNavigatorDelegate.h"
+#import "TTNavigatorRootContainer.h"
+#import "TTBaseNavigationController.h"
+#import "TTURLAction.h"
+#import "TTURLMap.h"
+#import "TTURLNavigatorPattern.h"
+#import "UIViewController+TTNavigator.h"
 
 // UINavigator (private)
-#import "Three20UINavigator/private/TTBaseNavigatorInternal.h"
+#import "TTBaseNavigatorInternal.h"
 
 // UICommon
-#import "Three20UICommon/UIView+TTUICommon.h"
-#import "Three20UICommon/UIViewControllerAdditions.h"
+#import "UIView+TTUICommon.h"
+#import "UIViewControllerAdditions.h"
 
 // Core
-#import "Three20Core/TTGlobalCore.h"
-#import "Three20Core/TTCorePreprocessorMacros.h"
-#import "Three20Core/TTDebug.h"
-#import "Three20Core/TTDebugFlags.h"
-#import "Three20Core/NSDateAdditions.h"
-#import "Three20Core/TTAvailability.h"
+#import "TTGlobalCore.h"
+#import "TTCorePreprocessorMacros.h"
+#import "TTDebug.h"
+#import "TTDebugFlags.h"
+#import "NSDateAdditions.h"
+#import "TTAvailability.h"
 
 static TTBaseNavigator* gNavigator = nil;
 
@@ -355,7 +355,7 @@ __attribute__((weak_import));
   _popoverController =  [[TTUIPopoverControllerClass() alloc]
                          initWithContentViewController: controller];
   if (_popoverController != nil) {
-    [_popoverController setDelegate:self];
+    [_popoverController setDelegate:(id <NSFileManagerDelegate>)self];
   }
 
   if (nil != sourceButton) {

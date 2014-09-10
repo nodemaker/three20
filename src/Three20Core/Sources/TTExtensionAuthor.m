@@ -14,10 +14,10 @@
 // limitations under the License.
 //
 
-#import "Three20Core/TTExtensionAuthor.h"
+#import "TTExtensionAuthor.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

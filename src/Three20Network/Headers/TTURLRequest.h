@@ -17,10 +17,10 @@
 #import <Foundation/Foundation.h>
 
 // Network
-#import "Three20Network/TTURLRequestCachePolicy.h"
+#import "TTURLRequestCachePolicy.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h" // For __TTDEPRECATED_METHOD
+#import "TTCorePreprocessorMacros.h" // For __TTDEPRECATED_METHOD
 
 /**
  * A constant to improve code readabillity, when using negative numbers for

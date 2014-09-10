@@ -14,23 +14,23 @@
 // limitations under the License.
 //
 
-#import "Three20UI/TTTableControlCell.h"
+#import "TTTableControlCell.h"
 
 // UI
-#import "Three20UI/TTTableControlItem.h"
-#import "Three20UI/TTTextEditor.h"
-#import "Three20UI/UIViewAdditions.h"
-#import "Three20Style/UIFontAdditions.h"
+#import "TTTableControlItem.h"
+#import "TTTextEditor.h"
+#import "UIViewAdditions.h"
+#import "UIFontAdditions.h"
 
 // UICommon
-#import "Three20UICommon/TTGlobalUICommon.h"
+#import "TTGlobalUICommon.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 // Style
-#import "Three20Style/TTGlobalStyle.h"
-#import "Three20Style/TTDefaultStyleSheet.h"
+#import "TTGlobalStyle.h"
+#import "TTDefaultStyleSheet.h"
 
 static const CGFloat kDefaultTextViewLines = 5.0f;
 static const CGFloat kControlPadding = 8.0f;

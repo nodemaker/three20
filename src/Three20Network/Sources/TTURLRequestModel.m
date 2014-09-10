@@ -14,15 +14,15 @@
 // limitations under the License.
 //
 
-#import "Three20Network/TTURLRequestModel.h"
+#import "TTURLRequestModel.h"
 
 // Network
-#import "Three20Network/TTURLRequest.h"
-#import "Three20Network/TTURLRequestQueue.h"
-#import "Three20Network/TTURLCache.h"
+#import "TTURLRequest.h"
+#import "TTURLRequestQueue.h"
+#import "TTURLCache.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

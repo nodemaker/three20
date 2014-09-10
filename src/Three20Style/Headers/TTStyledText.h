@@ -17,7 +17,7 @@
 #import <UIKit/UIKit.h>
 
 // Network
-#import "Three20Network/TTURLRequestDelegate.h"
+#import "TTURLRequestDelegate.h"
 
 @protocol TTStyledTextDelegate;
 @class TTStyledNode;

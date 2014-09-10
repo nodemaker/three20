@@ -14,26 +14,26 @@
 // limitations under the License.
 //
 
-#import "Three20UI/TTTableViewNetworkEnabledDelegate.h"
+#import "TTTableViewNetworkEnabledDelegate.h"
 
 // UI
-#import "Three20UI/TTTableHeaderDragRefreshView.h"
-#import "Three20UI/TTTableFooterInfiniteScrollView.h"
-#import "Three20UI/TTTableViewController.h"
-#import "Three20UI/UIViewAdditions.h"
+#import "TTTableHeaderDragRefreshView.h"
+#import "TTTableFooterInfiniteScrollView.h"
+#import "TTTableViewController.h"
+#import "UIViewAdditions.h"
 
 // UICommon
-#import "Three20UICommon/TTGlobalUICommon.h"
+#import "TTGlobalUICommon.h"
 
 // Network
-#import "Three20Network/TTModel.h"
+#import "TTModel.h"
 
 // Style
-#import "Three20Style/TTGlobalStyle.h"
-#import "Three20Style/TTDefaultStyleSheet+DragRefreshHeader.h"
+#import "TTGlobalStyle.h"
+#import "TTDefaultStyleSheet+DragRefreshHeader.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 
 // The number of pixels the table needs to be pulled down by in order to initiate the refresh.

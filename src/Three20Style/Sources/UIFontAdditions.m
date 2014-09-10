@@ -14,10 +14,10 @@
 // limitations under the License.
 //
 
-#import "Three20Style/UIFontAdditions.h"
+#import "UIFontAdditions.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -26,7 +26,6 @@
 /**
  * Additions.
  */
-TT_FIX_CATEGORY_BUG(UIFontAdditions)
 
 @implementation UIFont (TTCategory)
 

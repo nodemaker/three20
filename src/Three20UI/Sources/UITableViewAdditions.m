@@ -14,17 +14,17 @@
 // limitations under the License.
 //
 
-#import "Three20UI/UITableViewAdditions.h"
+#import "UITableViewAdditions.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 // UI
-#import "Three20UI/UIViewAdditions.h"
+#import "UIViewAdditions.h"
 
 // UICommon
-#import "Three20UICommon/UIWindowAdditions.h"
-#import "Three20UICommon/TTGlobalUICommon.h"
+#import "UIWindowAdditions.h"
+#import "TTGlobalUICommon.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -33,7 +33,6 @@
 /**
  * Additions.
  */
-TT_FIX_CATEGORY_BUG(UITableViewAdditions)
 
 @implementation UITableView (TTCategory)
 

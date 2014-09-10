@@ -14,16 +14,16 @@
 // limitations under the License.
 //
 
-#import "Three20UI/UINSObjectAdditions.h"
+#import "UINSObjectAdditions.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 // UI
-#import "Three20UI/TTNavigator.h"
+#import "TTNavigator.h"
 
 // UINavigator
-#import "Three20UINavigator/TTURLMap.h"
+#import "TTURLMap.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -32,7 +32,6 @@
 /**
  * Additions.
  */
-TT_FIX_CATEGORY_BUG(UINSObjectAdditions)
 
 @implementation NSObject (TTCategory)
 

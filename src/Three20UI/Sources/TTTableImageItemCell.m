@@ -14,24 +14,24 @@
 // limitations under the License.
 //
 
-#import "Three20UI/TTTableImageItemCell.h"
+#import "TTTableImageItemCell.h"
 
 // UI
-#import "Three20UI/TTImageView.h"
-#import "Three20UI/TTTableImageItem.h"
-#import "Three20UI/TTTableRightImageItem.h"
-#import "Three20UI/UIViewAdditions.h"
+#import "TTImageView.h"
+#import "TTTableImageItem.h"
+#import "TTTableRightImageItem.h"
+#import "UIViewAdditions.h"
 
 // Style
-#import "Three20Style/TTGlobalStyle.h"
-#import "Three20Style/TTDefaultStyleSheet.h"
-#import "Three20Style/TTImageStyle.h"
+#import "TTGlobalStyle.h"
+#import "TTDefaultStyleSheet.h"
+#import "TTImageStyle.h"
 
 // Network
-#import "Three20Network/TTURLCache.h"
+#import "TTURLCache.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 static const CGFloat kKeySpacing = 12.0f;
 static const CGFloat kDefaultImageSize = 50.0f;

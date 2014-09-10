@@ -6,15 +6,15 @@
 //
 
 // UI
-#import "Three20UI/TTTableViewCellBackgroundView.h"
+#import "TTTableViewCellBackgroundView.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 // Style
-#import "Three20Style/TTGlobalStyle.h"
-#import "Three20Style/TTStyleSheet.h"
-#import "Three20Style/TTDefaultStyleSheet.h"
+#import "TTGlobalStyle.h"
+#import "TTStyleSheet.h"
+#import "TTDefaultStyleSheet.h"
 
 #define ROUND_SIZE 10.0f
 

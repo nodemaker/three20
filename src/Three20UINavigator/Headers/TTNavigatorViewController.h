@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-#import "Three20UICommon/TTBaseViewController.h"
+#import "TTBaseViewController.h"
 
 /**
  * Cleans up navigator properties when the controller is released. Used by the garbage

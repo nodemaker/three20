@@ -14,25 +14,25 @@
 // limitations under the License.
 //
 
-#import "Three20UI/UINavigationControllerAdditions.h"
+#import "UINavigationControllerAdditions.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 // UI
-#import "Three20UI/TTNavigator.h"
-#import "Three20UI/TTNavigationController.h"
+#import "TTNavigator.h"
+#import "TTNavigationController.h"
 
 // UINavigator
-#import "Three20UINavigator/TTURLMap.h"
-#import "Three20UINavigator/UIViewController+TTNavigator.h"
+#import "TTURLMap.h"
+#import "UIViewController+TTNavigator.h"
 
 // UICommon
-#import "Three20UICommon/TTGlobalUICommon.h"
-#import "Three20UICommon/UIViewControllerAdditions.h"
+#import "TTGlobalUICommon.h"
+#import "UIViewControllerAdditions.h"
 
 // Network
-#import "Three20Network/TTURLRequestQueue.h"
+#import "TTURLRequestQueue.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,7 +41,6 @@
 /**
  * Additions.
  */
-TT_FIX_CATEGORY_BUG(UINavigationControllerAdditions)
 
 @implementation UINavigationController (TTCategory)
 

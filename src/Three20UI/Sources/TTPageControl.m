@@ -14,19 +14,19 @@
 // limitations under the License.
 //
 
-#import "Three20UI/TTPageControl.h"
+#import "TTPageControl.h"
 
 // UI
-#import "Three20UI/UIViewAdditions.h"
+#import "UIViewAdditions.h"
 
 // Style
-#import "Three20Style/TTStyleContext.h"
-#import "Three20Style/TTStyleSheet.h"
-#import "Three20Style/TTBoxStyle.h"
+#import "TTStyleContext.h"
+#import "TTStyleSheet.h"
+#import "TTBoxStyle.h"
 
 // Core
-#import "Three20Core/TTDebug.h"
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTDebug.h"
+#import "TTCorePreprocessorMacros.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

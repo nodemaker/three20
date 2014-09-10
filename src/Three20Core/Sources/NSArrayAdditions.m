@@ -14,11 +14,11 @@
 // limitations under the License.
 //
 
-#import "Three20Core/NSArrayAdditions.h"
+#import "NSArrayAdditions.h"
 
 // Core
-#import "Three20Core/NSObjectAdditions.h"
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "NSObjectAdditions.h"
+#import "TTCorePreprocessorMacros.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,7 +27,6 @@
 /**
  * Additions.
  */
-TT_FIX_CATEGORY_BUG(NSArrayAdditions)
 
 @implementation NSArray (TTCategory)
 

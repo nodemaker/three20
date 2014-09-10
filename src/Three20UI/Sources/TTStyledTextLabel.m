@@ -14,36 +14,33 @@
 // limitations under the License.
 //
 
-#import "Three20UI/TTStyledTextLabel.h"
+#import "TTStyledTextLabel.h"
 
 // UI
-#import "Three20UI/TTNavigator.h"
-#import "Three20UI/TTTableView.h"
-#import "Three20UI/UIViewAdditions.h"
+#import "TTNavigator.h"
+#import "TTTableView.h"
+#import "UIViewAdditions.h"
 
 // Style
-#import "Three20Style/TTGlobalStyle.h"
-#import "Three20Style/TTStyledText.h"
-#import "Three20Style/TTStyledNode.h"
-#import "Three20Style/TTStyleSheet.h"
-#import "Three20Style/TTStyledElement.h"
-#import "Three20Style/TTStyledLinkNode.h"
-#import "Three20Style/TTStyledButtonNode.h"
-#import "Three20Style/TTStyledTextNode.h"
+#import "TTGlobalStyle.h"
+#import "TTStyledText.h"
+#import "TTStyledNode.h"
+#import "TTStyleSheet.h"
+#import "TTStyledElement.h"
+#import "TTStyledLinkNode.h"
+#import "TTStyledButtonNode.h"
+#import "TTStyledTextNode.h"
 
 // - Styled frames
-#import "Three20Style/TTStyledInlineFrame.h"
-#import "Three20Style/TTStyledTextFrame.h"
+#import "TTStyledInlineFrame.h"
+#import "TTStyledTextFrame.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
-#import "Three20Core/TTDebug.h"
+#import "TTCorePreprocessorMacros.h"
+#import "TTDebug.h"
 
 // UI Common
-#import "Three20UICommon/TTGlobalUICommon.h"
-
-static const CGFloat kCancelHighlightThreshold = 4.0f;
-
+#import "TTGlobalUICommon.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////

@@ -17,7 +17,7 @@
 #import "UIView+TTUICommon.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -26,7 +26,6 @@
 /**
  * Additions.
  */
-TT_FIX_CATEGORY_BUG(UIView_TTUICommon)
 
 @implementation UIView (TTUICommon)
 

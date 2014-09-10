@@ -14,28 +14,27 @@
 // limitations under the License.
 //
 
-#import "Three20UI/TTSearchBar.h"
+#import "TTSearchBar.h"
 
 // UI
-#import "Three20UI/TTSearchTextField.h"
-#import "Three20UI/TTButton.h"
-#import "Three20UI/UIViewAdditions.h"
-#import "Three20UI/UITableViewAdditions.h"
-#import "Three20Style/UIFontAdditions.h"
+#import "TTSearchTextField.h"
+#import "TTButton.h"
+#import "UIViewAdditions.h"
+#import "UITableViewAdditions.h"
+#import "UIFontAdditions.h"
 
 // UICommon
-#import "Three20UICommon/TTGlobalUICommon.h"
+#import "TTGlobalUICommon.h"
 
 // Style
-#import "Three20Style/TTGlobalStyle.h"
-#import "Three20Style/TTDefaultStyleSheet.h"
+#import "TTGlobalStyle.h"
+#import "TTDefaultStyleSheet.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
-#import "Three20Core/TTGlobalCoreLocale.h"
+#import "TTCorePreprocessorMacros.h"
+#import "TTGlobalCoreLocale.h"
 
 static const CGFloat kMarginX   = 5.0f;
-static const CGFloat kMarginY   = 7.0f;
 static const CGFloat kPaddingX  = 10.0f;
 static const CGFloat kPaddingY  = 10.0f;
 static const CGFloat kSpacingX  = 4.0f;

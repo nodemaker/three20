@@ -14,20 +14,20 @@
 // limitations under the License.
 //
 
-#import "Three20UI/TTStyledTextTableCell.h"
+#import "TTStyledTextTableCell.h"
 
 // UI
-#import "Three20UI/TTStyledTextLabel.h"
-#import "Three20UI/UIViewAdditions.h"
-#import "Three20UI/UITableViewAdditions.h"
+#import "TTStyledTextLabel.h"
+#import "UIViewAdditions.h"
+#import "UITableViewAdditions.h"
 
 // Style
-#import "Three20Style/TTGlobalStyle.h"
-#import "Three20Style/TTDefaultStyleSheet.h"
-#import "Three20Style/TTStyledText.h"
+#import "TTGlobalStyle.h"
+#import "TTDefaultStyleSheet.h"
+#import "TTStyledText.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

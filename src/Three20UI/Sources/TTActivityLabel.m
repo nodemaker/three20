@@ -14,23 +14,23 @@
 // limitations under the License.
 //
 
-#import "Three20UI/TTActivityLabel.h"
+#import "TTActivityLabel.h"
 
 // UI
-#import "Three20UI/TTView.h"
-#import "Three20UI/TTButton.h"
-#import "Three20UI/UIViewAdditions.h"
+#import "TTView.h"
+#import "TTButton.h"
+#import "UIViewAdditions.h"
 
 // UINavigator
-#import "Three20UINavigator/TTGlobalNavigatorMetrics.h"
+#import "TTGlobalNavigatorMetrics.h"
 
 // Style
-#import "Three20Style/TTGlobalStyle.h"
-#import "Three20Style/TTDefaultStyleSheet.h"
-#import "Three20Style/UIFontAdditions.h"
+#import "TTGlobalStyle.h"
+#import "TTDefaultStyleSheet.h"
+#import "UIFontAdditions.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 static CGFloat kMargin          = 10.0f;
 static CGFloat kPadding         = 15.0f;

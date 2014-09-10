@@ -14,20 +14,20 @@
 // limitations under the License.
 //
 
-#import "Three20UI/TTExtensionInfoController.h"
+#import "TTExtensionInfoController.h"
 
 // UI
-#import "Three20UI/TTSectionedDataSource.h"
-#import "Three20UI/TTTableCaptionItem.h"
-#import "Three20UI/TTTableLongTextItem.h"
-#import "Three20UI/TTTableTextItem.h"
+#import "TTSectionedDataSource.h"
+#import "TTTableCaptionItem.h"
+#import "TTTableLongTextItem.h"
+#import "TTTableTextItem.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
-#import "Three20Core/TTDebug.h"
-#import "Three20Core/TTExtensionInfo.h"
-#import "Three20Core/TTExtensionAuthor.h"
-#import "Three20Core/TTExtensionLoader.h"
+#import "TTCorePreprocessorMacros.h"
+#import "TTDebug.h"
+#import "TTExtensionInfo.h"
+#import "TTExtensionAuthor.h"
+#import "TTExtensionLoader.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

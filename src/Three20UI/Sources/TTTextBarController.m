@@ -14,32 +14,32 @@
 // limitations under the License.
 //
 
-#import "Three20UI/TTTextBarController.h"
+#import "TTTextBarController.h"
 
 // UI
-#import "Three20UI/TTNavigator.h"
-#import "Three20UI/TTTextBarDelegate.h"
-#import "Three20UI/TTButton.h"
-#import "Three20UI/TTTextEditor.h"
-#import "Three20UI/UIViewAdditions.h"
+#import "TTNavigator.h"
+#import "TTTextBarDelegate.h"
+#import "TTButton.h"
+#import "TTTextEditor.h"
+#import "UIViewAdditions.h"
 
 // UINavigator
-#import "Three20UINavigator/TTGlobalNavigatorMetrics.h"
+#import "TTGlobalNavigatorMetrics.h"
 
 // UICommon
-#import "Three20UICommon/TTGlobalUICommon.h"
-#import "Three20UICommon/UIViewControllerAdditions.h"
-#import "Three20UICommon/UIView+TTUICommon.h"
+#import "TTGlobalUICommon.h"
+#import "UIViewControllerAdditions.h"
+#import "UIView+TTUICommon.h"
 
 // Style
-#import "Three20Style/TTGlobalStyle.h"
-#import "Three20Style/TTDefaultStyleSheet.h"
+#import "TTGlobalStyle.h"
+#import "TTDefaultStyleSheet.h"
 
 // Core
-#import "Three20Core/TTGlobalCoreLocale.h"
-#import "Three20Core/TTCorePreprocessorMacros.h"
-#import "Three20Core/NSStringAdditions.h"
-#import "Three20Core/TTGlobalCore.h"
+#import "TTGlobalCoreLocale.h"
+#import "TTCorePreprocessorMacros.h"
+#import "NSStringAdditions.h"
+#import "TTGlobalCore.h"
 
 static CGFloat kMargin  = 1.0f;
 static CGFloat kPadding = 5.0f;

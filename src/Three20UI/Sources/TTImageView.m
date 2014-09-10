@@ -14,25 +14,25 @@
 // limitations under the License.
 //
 
-#import "Three20UI/TTImageView.h"
+#import "TTImageView.h"
 
 // UI
-#import "Three20UI/TTImageViewDelegate.h"
+#import "TTImageViewDelegate.h"
 
 // UI (private)
-#import "Three20UI/private/TTImageLayer.h"
-#import "Three20UI/private/TTImageViewInternal.h"
+#import "TTImageLayer.h"
+#import "TTImageViewInternal.h"
 
 // Style
-#import "Three20Style/TTShape.h"
-#import "Three20Style/TTStyleContext.h"
-#import "Three20Style/TTContentStyle.h"
-#import "Three20Style/UIImageAdditions.h"
+#import "TTShape.h"
+#import "TTStyleContext.h"
+#import "TTContentStyle.h"
+#import "UIImageAdditions.h"
 
 // Network
-#import "Three20Network/TTURLCache.h"
-#import "Three20Network/TTURLImageResponse.h"
-#import "Three20Network/TTURLRequest.h"
+#import "TTURLCache.h"
+#import "TTURLImageResponse.h"
+#import "TTURLRequest.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

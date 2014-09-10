@@ -14,10 +14,10 @@
 // limitations under the License.
 //
 
-#import "Three20Style/UIColorAdditions.h"
+#import "UIColorAdditions.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
+#import "TTCorePreprocessorMacros.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,7 +110,6 @@ void HSVtoRGB( float *r, float *g, float *b, float h, float s, float v ) {
 /**
  * Additions.
  */
-TT_FIX_CATEGORY_BUG(UIColorAdditions)
 
 @implementation UIColor (TTCategory)
 
