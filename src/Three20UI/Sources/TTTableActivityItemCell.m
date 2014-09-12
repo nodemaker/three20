@@ -65,7 +65,7 @@
 - (void)layoutSubviews {
   [super layoutSubviews];
 
-  UITableView* tableView = (UITableView*)self.superview;
+  UITableView* tableView = (UITableView*)[self ancestorOrSelfWithClass:[UITableView class]];
   if (tableView.style == UITableViewStylePlain) {
     _activityLabel.frame = self.contentView.bounds;
 

@@ -19,7 +19,7 @@
 // - Global
 #import "TTCorePreprocessorMacros.h"
 
-#import "Three20.h"
+#import "Three20Object.h"
 #import "Three20Version.h"
 #import "TTGlobalCore.h"
 #import "TTGlobalCoreLocale.h"

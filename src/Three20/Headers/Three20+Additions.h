@@ -20,10 +20,6 @@
 // Core Additions
 #import "Three20Core+Additions.h"
 
-// Network Additions
-// No additions for Network yet.
-//#import "Three20Network+Additions.h"
-
 // Style Additions
 #import "Three20Style+Additions.h"
 

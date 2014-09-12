@@ -14,20 +14,17 @@
 // limitations under the License.
 //
 
-#import "extThree20JSON/TTURLJSONResponse.h"
+NSString* const kTTExtJSONErrorDomain = @"three20.ext.json";
+NSInteger const kTTExtJSONErrorCodeInvalidJSON = 100;
+
+#import "TTURLJSONResponse.h"
 
 // extJSON
-#import "extThree20JSON/TTErrorCodes.h"
-#ifdef EXTJSON_SBJSON
-#import "extThree20JSON/SBJson.h"
-#import "extThree20JSON/NSString+SBJSON.h"
-#elif defined(EXTJSON_YAJL)
-#import "extThree20JSON/NSObject+YAJL.h"
-#endif
+#import "TTErrorCodes.h"
 
 // Core
-#import "Three20Core/TTCorePreprocessorMacros.h"
-#import "Three20Core/TTDebug.h"
+#import "TTCorePreprocessorMacros.h"
+#import "TTDebug.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -61,6 +58,16 @@
   TTDASSERT(nil == _rootObject);
   NSError* err = nil;
   if ([data isKindOfClass:[NSData class]]) {
+      
+      
+      _rootObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
+      if (!_rootObject && !err) {
+          err = [NSError errorWithDomain:kTTExtJSONErrorDomain
+                                    code:kTTExtJSONErrorCodeInvalidJSON
+                                userInfo:nil];
+      }
+      
+      
 #ifdef EXTJSON_SBJSON
     NSString* json = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
     // When there are newline characters in the JSON string, 

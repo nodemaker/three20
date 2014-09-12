@@ -14,8 +14,13 @@
 // limitations under the License.
 //
 
+
+extern NSString* const kTTExtJSONErrorDomain;
+extern NSInteger const kTTExtJSONErrorCodeInvalidJSON;
+
+
 // Network
-#import "Three20Network/TTURLResponse.h"
+#import "TTURLResponse.h"
 
 /**
  * An implementation of the TTURLResponse protocal for turning JSON responses into NSObjects.

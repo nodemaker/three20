@@ -14,11 +14,11 @@
 // limitations under the License.
 //
 
-#import "extThree20JSON/TTExtensionLoader.h"
+#import "TTExtensionLoader.h"
 
 // Core
-#import "Three20Core/TTExtensionAuthor.h"
-#import "Three20Core/TTExtensionInfo.h"
+#import "TTExtensionAuthor.h"
+#import "TTExtensionInfo.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

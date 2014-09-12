@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-#import "Three20Core/TTExtensionLoader.h"
+#import "TTExtensionLoader.h"
 
 @interface TTExtensionLoader (TTJSONExtension)
 

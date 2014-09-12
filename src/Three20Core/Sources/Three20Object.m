@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-#import "Three20.h"
+#import "Three20Object.h"
 
 #import "Three20Version.h"
 

@@ -14,6 +14,5 @@
 // limitations under the License.
 //
 
-NSString* const kTTExtJSONErrorDomain = @"three20.ext.json";
-NSInteger const kTTExtJSONErrorCodeInvalidJSON = 100;
+
 
